@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <title>Stat Calculator</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="stylesheet.css" type="text/css"/>
+</head>
+    
+<body>
+    <div id="header">
+        <h1>Stat Calculator</h1>
+    </div>
+    <div id="main">
+        <form id="statsForm" action="javascript:;" onsubmit="calculateStats(this)">
+            <div class="block1">
+                <label for="baseStat">STR/WIL stat:</label><br>
+                <input type="number" max="100000.00" step="0.01" id="baseStat" name="baseStat"><br><br>
+            </div>
+            <div class="block2">
+                <label for="strRatio">STR ratio:</label><br>
+                <input type="number" max="100000.00" step="0.01" id="strRatio" required name="strRatio"><br><br>
+                <label for="dexRatio">DEX ratio:</label><br>
+                <input type="number" max="100000.00" step="0.01" id="dexRatio" required name="dexRatio"><br><br>
+                <label for="conRatio">CON ratio:</label><br>
+                <input type="number" max="100000.00" step="0.01" id="conRatio" required name="conRatio"><br><br>
+                <label for="wilRatio">WIL ratio:</label><br>
+                <input type="number" max="100000.00" step="0.01" id="wilRatio" required name="wilRatio"><br><br>
+                <label for="spiRatio">SPI ratio:</label><br>
+                <input type="number" max="100000.00" step="0.01" id="spiRatio" required name="spiRatio">
+            </div>
+            <div class="block3">
+                <p id="projStr">Projected STR:</p>
+                <br>
+                <p id="projDex">Projected DEX:</p>
+                <br>
+                <p id="projCon">Projected CON:</p>
+                <br>
+                <p id="projWil">Projected WIL:</p>
+                <br>
+                <p id="projSpi">Projected SPI:</p>
+            </div>
+            <br><br>
+            <input type="submit" text="Submit">
+        </form>
+    </div>
+    
+    <script type="text/javascript">
+        function calculateStats(statsForm) {
+            var projSTR = document.getElementById("projStr");
+            var projDEX = document.getElementById("projDex");
+            var projCON = document.getElementById("projCon");
+            var projWIL = document.getElementById("projWil");
+            var projSPI = document.getElementById("projSpi");
+            
+            var baseStat = document.getElementById("baseStat");
+            var wilStat = document.getElementById("wilStat");
+            
+            var strRatio = document.getElementById("strRatio");
+            var dexRatio = document.getElementById("dexRatio");
+            var conRatio = document.getElementById("conRatio");
+            var wilRatio = document.getElementById("wilRatio");
+            var spiRatio = document.getElementById("spiRatio");
+            
+            projSTR.textContent = "Projected STR: " + parseFloat(baseStat.value) * parseFloat(strRatio.value);
+            projDEX.textContent = "Projected DEX:" + parseFloat(baseStat.value) * parseFloat(dexRatio.value);
+            projCON.textContent = "Projected CON:" + parseFloat(baseStat.value) * parseFloat(conRatio.value);
+            projWIL.textContent = "Projected WIL:" + parseFloat(baseStat.value) * parseFloat(wilRatio.value);
+            projSPI.textContent = "Projected SPI:" + parseFloat(baseStat.value) * parseFloat(spiRatio.value);
+        }
+    </script>
+</body>
+</html>
