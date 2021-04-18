@@ -21,7 +21,7 @@
     <div id="header">
         <h1>Stat Calculator</h1>
     </div>
-    <div id="main">
+    <main>
         <form id="statsForm" action="javascript:;" onsubmit="calculateStats(this)">
             <div class="block1">
                 <label for="baseStat">STR/WIL stat:</label><br>
@@ -51,9 +51,11 @@
                 <p id="projSpi">Projected SPI:</p>
             </div>
             <br><br>
-            <input type="submit" text="Submit">
+            <div id="itemCentre">
+                <input type="submit" text="Submit">
+            </div>
         </form>
-    </div>
+    <main>
     
     <script type="text/javascript">
         function calculateStats(statsForm) {
