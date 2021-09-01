@@ -28,6 +28,11 @@ input[type=number] {
     transition: all ease-in-out 0.3s;
 }
 
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+
 input[type=number]:hover {
     background: rgba(200,200,200,0.3);
     border-radius: 6px;
