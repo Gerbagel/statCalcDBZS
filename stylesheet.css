@@ -54,9 +54,9 @@ input[type=submit] {
     font-size: 30px;
     border: 2px solid transparent;
     border-radius: 6px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 150px;
     text-align: center;
     background: rgba(200,200,200,0.3);
     transition: all ease-in-out 0.3s;
@@ -79,10 +79,6 @@ input[type=submit]:hover {
     padding-top: 15px;
     color: white;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-}
-
-#statsForm {
-    
 }
 
 #itemCentre {
