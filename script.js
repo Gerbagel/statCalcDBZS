@@ -1,4 +1,8 @@
-function calculateStats(statsForm) {
+var button10 = document.getElementById("button10");
+var button100 = document.getElementById("button100");
+var button1000 = document.getElementById("button1000");
+
+function calculateStats() {
     var projSTR = document.getElementById("projStr");
     var projDEX = document.getElementById("projDex");
     var projCON = document.getElementById("projCon");
@@ -19,3 +23,25 @@ function calculateStats(statsForm) {
     projWIL.textContent = "Projected WIL: " + parseFloat(baseStat.value) * parseFloat(wilRatio.value);
     projSPI.textContent = "Projected SPI: " + parseFloat(baseStat.value) * parseFloat(spiRatio.value);
 }
+
+function addStatLevel(amount) {
+    var mainStatInParent = document.getElementById("baseStat");
+    var mainStatIn = parseInt(mainStatInParent.value);
+
+    mainStatIn += amount;
+    mainStatInParent.value = mainStatIn;
+
+    calculateStats();
+}
+
+button10.addEventListener("click", () => {
+    addStatLevel(10);
+});
+
+button100.addEventListener("click", () => {
+    addStatLevel(100);
+});
+
+button1000.addEventListener("click", () => {
+    addStatLevel(1000);
+});
