@@ -1,8 +1,11 @@
 var button10 = document.getElementById("button10");
 var button100 = document.getElementById("button100");
 var button1000 = document.getElementById("button1000");
+var sound = document.getElementById("click");
+sound.volume = 0.1;
 
 function calculateStats() {
+    sound.play();
     var projSTR = document.getElementById("projStr");
     var projDEX = document.getElementById("projDex");
     var projCON = document.getElementById("projCon");
@@ -25,6 +28,7 @@ function calculateStats() {
 }
 
 function addStatLevel(amount) {
+    sound.play();
     var mainStatInParent = document.getElementById("baseStat");
     var mainStatIn = parseInt(mainStatInParent.value);
 
