@@ -41,7 +41,7 @@ function addStatLevel(amount) {
     calculateStats();
 }
 
-document.body.addEventListener("load", () => {
+function onLoad() {
     let cookieName = "isName=";
     let cookieString = "";
     let decodedCookie = decodeURIComponent(document.cookie);
@@ -71,17 +71,17 @@ document.body.addEventListener("load", () => {
         sound.volume = 0.1;
         muteButton.childNodes[0].src = "assets/volume-on.svg";
     }
-});
+}
 
 muteButton.addEventListener("click", () => {
     if (sound.volume > 0) {
         sound.play();
-        document.cookie = "isMute=1;expires=" + cookieExpire + ";path=/";
+        document.cookie = "isMute=1;expires=" + cookieExpire + ";path=/;SameSite=Lax;";
         sound.volume = 0;
         muteButton.childNodes[0].src = "assets/volume-mute.svg";
     }
     else {
-        document.cookie = "isMute=0;expires=" + cookieExpire + ";path=/";
+        document.cookie = "isMute=0;expires=" + cookieExpire + ";path=/;SameSite=Lax;";
         sound.volume = 0.1;
         muteButton.childNodes[0].src = "assets/volume-on.svg";
     }
