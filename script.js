@@ -1,7 +1,10 @@
 var button10 = document.getElementById("button10");
 var button100 = document.getElementById("button100");
 var button1000 = document.getElementById("button1000");
+var muteButton = document.getElementById("muteButton");
 var sound = document.getElementById("click");
+var d = new Date();
+var cookieExpire = d.getTime() + 24*60*60*1000;
 sound.volume = 0.1;
 
 function calculateStats() {
@@ -37,6 +40,52 @@ function addStatLevel(amount) {
 
     calculateStats();
 }
+
+document.body.addEventListener("load", () => {
+    let cookieName = "isName=";
+    let cookieString = "";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(";");
+
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt[0] == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(cookieName) == 0) {
+            cookieString = c.substring(cookieName.length, c.length);
+        }
+    }
+    cookieString = ""
+
+    if (cookieString == "0") {
+        sound.volume = 0.1;
+        muteButton.childNodes[0].src = "assets/volume-on.svg";
+    }
+    else if (cookieString == "1") {
+        sound.volume = 0;
+        muteButton.childNodes[0].src = "assets/volume-mute.svg";
+    }
+    else {
+        document.cookie = "isMute=0;expires=" + cookieExpire + ";path=/";
+        sound.volume = 0.1;
+        muteButton.childNodes[0].src = "assets/volume-on.svg";
+    }
+});
+
+muteButton.addEventListener("click", () => {
+    if (sound.volume > 0) {
+        sound.play();
+        document.cookie = "isMute=1;expires=" + cookieExpire + ";path=/";
+        sound.volume = 0;
+        muteButton.childNodes[0].src = "assets/volume-mute.svg";
+    }
+    else {
+        document.cookie = "isMute=0;expires=" + cookieExpire + ";path=/";
+        sound.volume = 0.1;
+        muteButton.childNodes[0].src = "assets/volume-on.svg";
+    }
+});
 
 button10.addEventListener("click", () => {
     addStatLevel(10);
