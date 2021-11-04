@@ -56,17 +56,20 @@ function onLoad() {
             cookieString = c.substring(cookieName.length, c.length);
         }
     }
-    cookieString = ""
+    console.log(cookieString);
 
-    if (cookieString == "0") {
+    if (cookieString === "0" || cookieString === 0) {
+        console.log("enabled");
         sound.volume = 0.1;
         muteButton.childNodes[0].src = "assets/volume-on.svg";
     }
-    else if (cookieString == "1") {
+    else if (cookieString == "1" || cookieString == 1) {
+        console.log("disabled");
         sound.volume = 0;
         muteButton.childNodes[0].src = "assets/volume-mute.svg";
     }
     else {
+        console.log("enabled1");
         document.cookie = "isMute=0;expires=" + cookieExpire + ";path=/";
         sound.volume = 0.1;
         muteButton.childNodes[0].src = "assets/volume-on.svg";
