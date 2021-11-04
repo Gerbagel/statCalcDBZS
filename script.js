@@ -41,21 +41,24 @@ function addStatLevel(amount) {
     calculateStats();
 }
 
-function onLoad() {
-    let cookieName = "isName=";
-    let cookieString = "";
+function getCookie(cname) {
+    let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(";");
-
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt[0] == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(cookieName) == 0) {
-            cookieString = c.substring(cookieName.length, c.length);
-        }
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
     }
+    return "";
+}
+
+function onLoad() {
+    let cookieString = getCookie("isMute");
     console.log(cookieString);
 
     if (cookieString === "0" || cookieString === 0) {
