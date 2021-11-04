@@ -8,7 +8,10 @@ var cookieExpire = d.getTime() + 24*60*60*1000;
 sound.volume = 0.1;
 
 function calculateStats() {
-    sound.play();
+    let tempSound = sound.cloneNode();
+    tempSound.volume = sound.volume;
+    tempSound.play();
+    tempSound.remove();
     var projSTR = document.getElementById("projStr");
     var projDEX = document.getElementById("projDex");
     var projCON = document.getElementById("projCon");
@@ -31,7 +34,6 @@ function calculateStats() {
 }
 
 function addStatLevel(amount) {
-    sound.play();
     var mainStatInParent = document.getElementById("baseStat");
     var mainStatIn = parseInt(mainStatInParent.value);
 
