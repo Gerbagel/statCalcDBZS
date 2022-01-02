@@ -23,46 +23,52 @@
     <div id="header">
         <h1>Stat Calculator</h1>
     </div>
-    <main>
-        <button type="button" id="muteButton" class="addButton"><img src="assets/volume-on.svg"></button> 
-        <audio id="click" src="assets/click.ogg" autoplay="false" preload="auto"></audio>
-        <form id="statsForm" action="javascript:;" onsubmit="calculateStats()">
-            <div class="block1">
-                <label for="baseStat">STR/WIL stat:</label><br>
-                <input type="number" max="100000.00" step="0.01" id="baseStat" name="baseStat"><br><br>
-                <button type="button" id="button10" class="addButton">+10</button>
-                <button type="button" id="button100" class="addButton">+100</button>
-                <button type="button" id="button1000" class="addButton">+1000</button>
-            </div>
-            <div class="block2">
-                <label for="strRatio">STR ratio:</label><br>
-                <input type="number" max="100000.00" step="0.01" id="strRatio" required name="strRatio"><br><br>
-                <label for="dexRatio">DEX ratio:</label><br>
-                <input type="number" max="100000.00" step="0.01" id="dexRatio" required name="dexRatio"><br><br>
-                <label for="conRatio">CON ratio:</label><br>
-                <input type="number" max="100000.00" step="0.01" id="conRatio" required name="conRatio"><br><br>
-                <label for="wilRatio">WIL ratio:</label><br>
-                <input type="number" max="100000.00" step="0.01" id="wilRatio" required name="wilRatio"><br><br>
-                <label for="spiRatio">SPI ratio:</label><br>
-                <input type="number" max="100000.00" step="0.01" id="spiRatio" required name="spiRatio">
-            </div>
-            <div class="block3">
-                <p id="projStr">Projected STR:</p>
-                <br>
-                <p id="projDex">Projected DEX:</p>
-                <br>
-                <p id="projCon">Projected CON:</p>
-                <br>
-                <p id="projWil">Projected WIL:</p>
-                <br>
-                <p id="projSpi">Projected SPI:</p>
-            </div>
-            <br><br>
-            <div id="itemCentre">
-                <input type="submit" value="Calculate">
-            </div>
-        </form>
-    <main>
+    <div id="sheet">
+        <main>
+            <button type="button" id="muteButton" class="addButton"><div class="button-div"><p class="button-text"><img src="assets/volume-on.svg"></p></div></button> 
+            <audio id="click" src="assets/click.ogg" autoplay="false" preload="auto"></audio>
+            <form id="statsForm" action="javascript:;" onsubmit="calculateStats()">
+                <div class="block1">
+                    <label for="baseStat">STR/WIL stat:</label><br>
+                    <input type="number" max="100000.00" step="0.01" id="baseStat" name="baseStat"><br><br>
+                    <button type="button" id="button10" class="addButton"><div class="button-div"><p class="button-text">+10</p></div></button>
+                    <button type="button" id="button100" class="addButton"><div class="button-div"><p class="button-text">+100</p></div></button>
+                    <button type="button" id="button1000" class="addButton"><div class="button-div"><p class="button-text">+1000</p></div></button>
+                </div>
+                <div class="block2">
+                    <label for="strRatio">STR ratio:</label><br>
+                    <input type="number" max="100000.00" step="0.01" id="strRatio" required name="strRatio"><br><br>
+                    <label for="dexRatio">DEX ratio:</label><br>
+                    <input type="number" max="100000.00" step="0.01" id="dexRatio" required name="dexRatio"><br><br>
+                    <label for="conRatio">CON ratio:</label><br>
+                    <input type="number" max="100000.00" step="0.01" id="conRatio" required name="conRatio"><br><br>
+                    <label for="wilRatio">WIL ratio:</label><br>
+                    <input type="number" max="100000.00" step="0.01" id="wilRatio" required name="wilRatio"><br><br>
+                    <label for="spiRatio">SPI ratio:</label><br>
+                    <input type="number" max="100000.00" step="0.01" id="spiRatio" required name="spiRatio">
+                </div>
+                <div class="block3">
+                    <p id="projStr">Projected STR:</p>
+                    <br>
+                    <p id="projDex">Projected DEX:</p>
+                    <br>
+                    <p id="projCon">Projected CON:</p>
+                    <br>
+                    <p id="projWil">Projected WIL:</p>
+                    <br>
+                    <p id="projSpi">Projected SPI:</p>
+                </div>
+                <br><br>
+                <div id="itemCentre">
+                    <button type="submit" id="calcButton">
+                        <div class="button-div">
+                            <p class="button-text">Calculate</p>
+                        </div>
+                    </button>
+                </div>
+            </form>
+        <main>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

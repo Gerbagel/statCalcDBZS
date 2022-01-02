@@ -86,12 +86,12 @@ muteButton.addEventListener("click", () => {
         sound.play();
         document.cookie = "isMute=1;expires=" + cookieExpire + ";path=/;SameSite=Lax;";
         sound.volume = 0;
-        muteButton.childNodes[0].src = "assets/volume-mute.svg";
+        muteButton.childNodes[0].childNodes[0].childNodes[0].src = "assets/volume-mute.svg";
     }
     else {
         document.cookie = "isMute=0;expires=" + cookieExpire + ";path=/;SameSite=Lax;";
         sound.volume = 0.1;
-        muteButton.childNodes[0].src = "assets/volume-on.svg";
+        muteButton.childNodes[0].childNodes[0].childNodes[0].src = "assets/volume-on.svg";
     }
 });
 
