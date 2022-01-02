@@ -83,7 +83,11 @@ function onLoad() {
 
 muteButton.addEventListener("click", () => {
     if (sound.volume > 0) {
-        sound.play();
+        let tempSound = sound.cloneNode();
+        tempSound.volume = sound.volume;
+        tempSound.play();
+        tempSound.remove();
+        
         document.cookie = "isMute=1;expires=" + cookieExpire + ";path=/;SameSite=Lax;";
         sound.volume = 0;
         muteButton.childNodes[0].childNodes[0].childNodes[0].src = "assets/volume-mute.svg";
