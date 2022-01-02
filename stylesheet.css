@@ -34,6 +34,8 @@ body {
     background-size: 100px 100px;
     color: rgb(200,200,200);
     font-family: 'Minecraftia';
+
+    text-shadow: 2px 2px #282828;
 }
 
 main {
@@ -63,6 +65,8 @@ input[type=number] {
     border: 2px solid #a0a0a0;
     color: white;
     background: black;
+
+    text-shadow: none;
 }
 
 /* Firefox */
@@ -121,6 +125,7 @@ button[type=submit]:active {
 #header h1 {
     padding-top: 28px;
     color: white;
+    text-shadow: 3px 3px #3f3f3f;
 }
 
 #itemCentre {
