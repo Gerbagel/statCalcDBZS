@@ -44,6 +44,14 @@ main {
     padding-top: 20px;
 }
 
+label {
+    color: #a0a0a0;
+}
+
+button {
+    font-family: 'Minecraftia';
+}
+
 input {
     font-size: 16px;
     font-family: 'Minecraftia';
@@ -52,15 +60,10 @@ input {
 input[type=number] {
     height: 20px;
     padding: 7px;
-    border: 2px solid transparent;
+    border: 2px solid #a0a0a0;
     border-bottom: 2px solid white;
     color: white;
-    background: transparent;
-    transition: all ease-in-out 0.3s;
-}
-
-button {
-    font-family: 'Minecraftia';
+    background: black;
 }
 
 /* Firefox */
@@ -69,16 +72,11 @@ input[type=number] {
   }
 
 input[type=number]:hover {
-    background: rgba(200,200,200,0.3);
-    border-radius: 6px;
+    cursor: default;
 }
 
 input[type=number]:focus {
     outline: none;
-    border: 2px solid transparent;
-    border-radius: 6px;
-    background: white;
-    color: black;
 }
 
 input[type=number]::-webkit-inner-spin-button {
