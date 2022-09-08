@@ -36,6 +36,8 @@ function calculateStats() {
 function addStatLevel(amount) {
     var mainStatInParent = document.getElementById("baseStat");
     var mainStatIn = parseInt(mainStatInParent.value);
+    
+    console.log(mainStatIn);
 
     mainStatIn += amount;
     mainStatInParent.value = mainStatIn;
