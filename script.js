@@ -37,9 +37,13 @@ function addStatLevel(amount) {
     var mainStatInParent = document.getElementById("baseStat");
     var mainStatIn = parseInt(mainStatInParent.value);
     
+    console.log(mainStatIn);
+    
     if (mainStatIn === NaN) {
         mainStatIn = 0;   
     }
+    
+    console.log(mainStatIn);
 
     mainStatIn += amount;
     mainStatInParent.value = mainStatIn;
