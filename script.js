@@ -40,6 +40,7 @@ function addStatLevel(amount) {
     console.log(mainStatIn);
     
     if (mainStatIn === NaN) {
+        console.log("fuck");
         mainStatIn = 0;   
     }
     
