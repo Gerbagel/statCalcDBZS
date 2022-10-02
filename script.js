@@ -44,6 +44,8 @@ function addStatLevel(amount) {
         mainStatIn = 0;   
     }
     
+    console.log("you");
+    
     console.log(mainStatIn);
 
     mainStatIn += amount;
