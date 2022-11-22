@@ -1,10 +1,10 @@
-var button10 = document.getElementById("button10");
-var button100 = document.getElementById("button100");
-var button1000 = document.getElementById("button1000");
-var muteButton = document.getElementById("muteButton");
-var sound = document.getElementById("click");
-var d = new Date();
-var cookieExpire = d.getTime() + 24*60*60*1000;
+let button10 = document.getElementById("button10");
+let button100 = document.getElementById("button100");
+let button1000 = document.getElementById("button1000");
+let muteButton = document.getElementById("muteButton");
+let sound = document.getElementById("click");
+let d = new Date();
+let cookieExpire = d.getTime() + 24*60*60*1000;
 sound.volume = 0.1;
 
 function calculateStats() {
@@ -12,19 +12,19 @@ function calculateStats() {
     tempSound.volume = sound.volume;
     tempSound.play();
     tempSound.remove();
-    var projSTR = document.getElementById("projStr");
-    var projDEX = document.getElementById("projDex");
-    var projCON = document.getElementById("projCon");
-    var projWIL = document.getElementById("projWil");
-    var projSPI = document.getElementById("projSpi");
+    let projSTR = document.getElementById("projStr");
+    let projDEX = document.getElementById("projDex");
+    let projCON = document.getElementById("projCon");
+    let projWIL = document.getElementById("projWil");
+    let projSPI = document.getElementById("projSpi");
     
-    var baseStat = document.getElementById("baseStat");
+    let baseStat = document.getElementById("baseStat");
     
-    var strRatio = document.getElementById("strRatio");
-    var dexRatio = document.getElementById("dexRatio");
-    var conRatio = document.getElementById("conRatio");
-    var wilRatio = document.getElementById("wilRatio");
-    var spiRatio = document.getElementById("spiRatio");
+    let strRatio = document.getElementById("strRatio");
+    let dexRatio = document.getElementById("dexRatio");
+    let conRatio = document.getElementById("conRatio");
+    let wilRatio = document.getElementById("wilRatio");
+    let spiRatio = document.getElementById("spiRatio");
     
     projSTR.textContent = "Projected STR: " + parseFloat(baseStat.value) * parseFloat(strRatio.value);
     projDEX.textContent = "Projected DEX: " + parseFloat(baseStat.value) * parseFloat(dexRatio.value);
@@ -34,8 +34,8 @@ function calculateStats() {
 }
 
 function addStatLevel(amount) {
-    var mainStatInParent = document.getElementById("baseStat");
-    var mainStatIn = parseInt(mainStatInParent.value);
+    let mainStatInParent = document.getElementById("baseStat");
+    let mainStatIn = parseInt(mainStatInParent.value);
     
     if (isNaN(mainStatIn)) {
         mainStatIn = 0;   
